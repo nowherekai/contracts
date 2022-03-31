@@ -169,7 +169,7 @@ describe('Membership', function () {
       await this.membership.updateWhitelist(this.rootHash);
 
       await expect(
-        this.membership.connect(await ethers.getSigner(this.accounts[4])).mint(this.badProof)
+        this.membership.connect(await ethers.getSigner(this.accounts[4])).mint(this.proofs[0])
       ).to.be.revertedWith('InvalidProof()');
     });
   });
